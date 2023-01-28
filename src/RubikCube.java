@@ -1,5 +1,5 @@
 class RubikCube {
-// The faces of the cube are represented by a 2D array of integers
+// The faces of the cube are represented by six 2D arrays of integers
 // The integers represent the color of the face
 // 1 - green
 // 2 - yellow
@@ -14,9 +14,7 @@ class RubikCube {
     private int[][] rightFace;
     private int[][] topFace;
     private int[][] bottomFace;
-
-    private int[][][] faces = {frontFace, backFace, leftFace, rightFace, topFace, bottomFace};
-
+    private int[][][] faces;
 
     public RubikCube(){
         // Initialize the faces of the cube to their initial state
@@ -26,6 +24,8 @@ class RubikCube {
         rightFace = new int[][] {{4,4,4}, {4,4,4}, {4,4,4}};
         topFace = new int[][] {{5,5,5}, {5,5,5}, {5,5,5}};
         bottomFace = new int[][] {{6,6,6}, {6,6,6}, {6,6,6}};
+        faces = new int[][][]{frontFace, backFace, leftFace, rightFace, topFace, bottomFace};
+
     }
 
     enum Colors {
