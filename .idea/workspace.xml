@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="acb3565f-63e4-43a2-b56f-82fc7c58f357" name="Changes" comment="RubicCube Class -&#10;Constructor&#10;Rotatations Function Headers&#10;Faces Getters implemented&#10;isSolved Method implemented (untested)" />
+    <list default="true" id="acb3565f-63e4-43a2-b56f-82fc7c58f357" name="Changes" comment="RubicCube Class -&#10;Constructor&#10;Rotatations Function Headers&#10;Faces Getters implemented&#10;isSolved Method implemented (untested)">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RubikCube.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RubikCube.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -70,7 +74,14 @@
       <option name="project" value="LOCAL‎" />
       <updated>1674912374491</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL‎-00005" summary="RubicCube Class -&#10;Constructor&#10;Rotatations Function Headers&#10;Faces Getters implemented&#10;isSolved Method implemented (untested)">
+      <created>1674912511826</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL‎-00005" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1674912511826</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
