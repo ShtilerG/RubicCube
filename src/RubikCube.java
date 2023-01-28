@@ -144,6 +144,6 @@ class RubikCube {
             }
         }
         return true;
-    } // TODO - Test method
+    } // Tested and working
 
 }
