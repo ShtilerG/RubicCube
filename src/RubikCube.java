@@ -139,12 +139,12 @@ class RubikCube {
 
 
     // scramble the cube
-    public void scramble(){
+    public void scrambleCube(){
 
     }
 
     // solve the cube
-    public void solve(){
+    public void solveCube(){
 
     }
 
@@ -193,5 +193,16 @@ class RubikCube {
             }
             System.out.println();
         }
+    }
+    // Initialize the faces of the cube to their initial state
+    public void initializeCube(){
+        frontFace = new int[][] {{1,1,1}, {1,1,1}, {1,1,1}};
+        backFace = new int[][] {{2,2,2}, {2,2,2}, {2,2,2}};
+        leftFace = new int[][] {{3,3,3}, {3,3,3}, {3,3,3}};
+        rightFace = new int[][] {{4,4,4}, {4,4,4}, {4,4,4}};
+        topFace = new int[][] {{5,5,5}, {5,5,5}, {5,5,5}};
+        bottomFace = new int[][] {{6,6,6}, {6,6,6}, {6,6,6}};
+        faces = new int[][][]{frontFace, backFace, leftFace, rightFace, topFace, bottomFace};
+
     }
 }
