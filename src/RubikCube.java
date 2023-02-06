@@ -1,12 +1,13 @@
 class RubikCube {
 // The faces of the cube are represented by six 2D arrays of integers
 // The integers represent the color of the face
-// 1 - green
-// 2 - yellow
-// 3 - orange
-// 4 - red
-// 5 - white
-// 6 - blue
+
+// 1 - GREEN
+// 2 - BLUE
+// 3 - RED
+// 4 - ORANGE
+// 5 - YELLOW
+// 6 - WHITE
     public static final String RESET = "\033[0m"; // Text Reset // Regular Colors
 
     public static final String RED = "\033[0;31m";     // RED
@@ -37,16 +38,17 @@ class RubikCube {
     }
 
     enum Colors {
-        GREEN, // front face - 1
-        YELLOW, // back face - 2
-        ORANGE, //  left face - 3
-        RED, // right face - 4
-        WHITE, // top face - 5
-        BLUE // bottom face - 6
+        GREEN, // 1
+        BLUE, // 2
+        RED, // 3
+        ORANGE, // 4
+        YELLOW, // 5
+        WHITE // 6
     }
     //region Rotations
     // rotate front face clockwise
     public void rotateFrontClockwise(){
+
 
 
     }
@@ -173,19 +175,19 @@ class RubikCube {
                             System.out.print(GREEN + face[i][j] + RESET + " ");
                             break;
                         case 2:
-                            System.out.print(YELLOW + face[i][j] + RESET + " ");
+                            System.out.print(BLUE + face[i][j] + RESET + " ");
                             break;
                         case 3:
-                            System.out.print(ORANGE + face[i][j] + RESET + " ");
-                            break;
-                        case 4:
                             System.out.print(RED + face[i][j] + RESET + " ");
                             break;
+                        case 4:
+                            System.out.print(ORANGE + face[i][j] + RESET + " ");
+                            break;
                         case 5:
-                            System.out.print(face[i][j] + RESET + " ");
+                            System.out.print(YELLOW + face[i][j] + RESET + " ");
                             break;
                         case 6:
-                            System.out.print(BLUE + face[i][j] + RESET + " ");
+                            System.out.print(face[i][j] + RESET + " ");
                             break;
                     }
                 }
