@@ -8,6 +8,7 @@ class RubikCube {
 // 4 - ORANGE
 // 5 - YELLOW
 // 6 - WHITE
+
     public static final String RESET = "\033[0m"; // Text Reset // Regular Colors
 
     public static final String RED = "\033[0;31m";     // RED
@@ -25,32 +26,86 @@ class RubikCube {
     private int[][] bottomFace;
     private int[][][] faces;
 
+    enum Colors{ // TODO use all arrays of enums instead of ints for code readability
+        BLANK,GREEN,BLUE,RED,ORANGE,YELLOW,WHITE
+    }
+
     public RubikCube(){
         // Initialize the faces of the cube to their initial state
-        frontFace = new int[][] {{1,1,1}, {1,1,1}, {1,1,1}};
-        backFace = new int[][] {{2,2,2}, {2,2,2}, {2,2,2}};
-        leftFace = new int[][] {{3,3,3}, {3,3,3}, {3,3,3}};
-        rightFace = new int[][] {{4,4,4}, {4,4,4}, {4,4,4}};
-        topFace = new int[][] {{5,5,5}, {5,5,5}, {5,5,5}};
-        bottomFace = new int[][] {{6,6,6}, {6,6,6}, {6,6,6}};
+        frontFace = new int[][] {{1,1,1},
+                                {1,1,1},
+                                {1,1,1}};
+
+        backFace = new int[][] {{2,2,2},
+                                {2,2,2},
+                                {2,2,2}};
+
+        leftFace = new int[][] {{3,3,3},
+                                {3,3,3},
+                                {3,3,3}};
+
+        rightFace = new int[][] {{4,4,4},
+                                {4,4,4},
+                                {4,4,4}};
+
+        topFace = new int[][] {{5,5,5},
+                               {5,5,5},
+                               {5,5,5}};
+
+        bottomFace = new int[][] {{6,6,6}, // bottomFace[0][0],[0][1],[0][2]
+                                  {6,6,6}, // bottomFace[1][0],[1][1],[1][2]
+                                  {6,6,6}};// bottomFace[2][0],[2][1],[2][2]
+
         faces = new int[][][]{frontFace, backFace, leftFace, rightFace, topFace, bottomFace};
 
     }
 
-    enum Colors {
-        GREEN, // 1
-        BLUE, // 2
-        RED, // 3
-        ORANGE, // 4
-        YELLOW, // 5
-        WHITE // 6
-    }
+
     //region Rotations
-    // rotate front face clockwise
+
+    // rotate front face clockwise aka F
     public void rotateFrontClockwise(){
+        int[][] temp = new int[3][3];
+        temp[0][0] = frontFace[0][0];
+        temp[0][1] = frontFace[0][1];
+        temp[0][2] = frontFace[0][2];
+        temp[1][0] = frontFace[1][0];
+        temp[1][1] = frontFace[1][1];
+        temp[1][2] = frontFace[1][2];
+        temp[2][0] = frontFace[2][0];
+        temp[2][1] = frontFace[2][1];
+        temp[2][2] = frontFace[2][2];
 
+        frontFace[0][0] = temp[2][0];
+        frontFace[0][1] = temp[1][0];
+        frontFace[0][2] = temp[0][0];
+        frontFace[1][0] = temp[2][1];
+        frontFace[1][1] = temp[1][1];
+        frontFace[1][2] = temp[0][1];
+        frontFace[2][0] = temp[2][2];
+        frontFace[2][1] = temp[1][2];
+        frontFace[2][2] = temp[0][2];
 
+        int[] temp2 = new int[3];
+        temp2[0] = topFace[2][0];
+        temp2[1] = topFace[2][1];
+        temp2[2] = topFace[2][2];
 
+        topFace[2][0] = leftFace[2][0];
+        topFace[2][1] = leftFace[2][1];
+        topFace[2][2] = leftFace[2][2];
+
+        leftFace[0][2] = bottomFace[0][2];
+        leftFace[1][2] = bottomFace[0][1];
+        leftFace[2][2] = bottomFace[0][0];
+
+        bottomFace[0][2] = rightFace[2][0];
+        bottomFace[0][1] = rightFace[2][1];
+        bottomFace[0][0] = rightFace[2][2];
+
+        rightFace[0][0] = temp2[0];
+        rightFace[1][0] = temp2[1];
+        rightFace[2][0] = temp2[2];
     }
 
     // rotate front face counter-clockwise

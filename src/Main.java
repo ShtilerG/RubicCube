@@ -3,6 +3,9 @@ public class Main {
         System.out.println("Hello world!");
         RubikCube cube = new RubikCube();
         cube.printCube();
+        System.out.println("Before Rotation");
+        cube.rotateFrontClockwise();
+        cube.printCube();
         System.out.println(cube.isSolved());
     }
 }
